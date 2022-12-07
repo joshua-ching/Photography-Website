@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Josh's Website</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <h1>Here is a big title</h1>
+    This is a <em>test</em>
+
+    <p>
+        here is a link <a href="http://www.youtube.com"> here</a>
+    </p>
+
+    <p>
+        And here is a picture
+        <br>
+        <img src="https://i.pinimg.com/564x/71/fa/81/71fa8137b64abcf50fdb124c21fd16fd.jpg">
+    </p>
+
+
+
+
+    <div class="container">
+        my content
+    </div>
+
+    <style>
+        :root {
+            --card_width: 250px;
+            --card_border_radius: 16px;
+            --row_increment: 10px;
+            --card_small: 26;
+            --card_medium: 33;
+            --card_large: 45;
+        }
+
+        /* body {
+            margin: 0;
+            padding: 0;
+            background-color: grey;
+        } */
+
+        .pin_container {
+            margin: auto;
+            padding: 0;
+            width: 90vw;
+            /* position: absolute; */
+
+            /* left: 50%;
+            transform: translateX(-50%); */
+            display: grid;
+            grid-template-columns: repeat(auto-fill, var(--card_width));
+            grid-auto-rows: var(--row_increment);
+
+            justify-content: center;
+            border-radius: var(--card_border_radius);
+            background-color: black;
+
+        }
+
+
+
+        .card_small {
+            grid-row-end: span var(--card_small);
+            display: flex;
+            justify-content: center;
+        }
+
+        .card_medium {
+            grid-row-end: span var(--card_medium);
+            display: flex;
+            justify-content: center;
+        }
+
+        .card_large {
+            grid-row-end: span var(--card_large);
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            padding: 0px;
+            margin: 15px 10px;
+            border-radius: 10px;
+            overflow: hidden;
+
+
+            background-color: darkgray;
+        }
+
+        .card_image {
+            /* min-width: 100%;
+            min-height: 100%; */
+            width: 50%;
+            margin: auto;
+            display: block;
+        }
+    </style>
+
+
+
+    <div id="test">
+        <!-- <img src="https://i.pinimg.com/564x/71/fa/81/71fa8137b64abcf50fdb124c21fd16fd.jpg"> -->
+        <!-- this is a div -->
+        <div id="test2">
+            <img src="https://i.pinimg.com/564x/71/fa/81/71fa8137b64abcf50fdb124c21fd16fd.jpg">
+        </div>
+        <div id="test3"></div>
+    </div>
+
+    <!-- <h1 class="test2">test</h1> -->
+
+    <div class="pin_container">
+
+
+        <div class="card card_small">
+
+            <img class="card_img" src="https://i.pinimg.com/564x/71/fa/81/71fa8137b64abcf50fdb124c21fd16fd.jpg">
+
+
+        </div>
+
+
+
+
+
+
+        <div class="card card_medium">
+            <img class="card_img"
+                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sunset-quotes-21-1586531574.jpg?crop=0.668xw:1.00xh;0.138xw,0&resize=640:*">
+        </div>
+        <div class="card card_large">
+
+            <img class="card_img"
+                src="https://www.planetware.com/wpimages/2020/03/best-hot-air-balloon-rides-cappadocia-turkey.jpg">
+        </div>
+        <div class="card card_small">
+            <img class="card_img"
+                src="https://media.discordapp.net/attachments/813353720610947102/1044880238196293632/Screenshot_from_2022-11-22_22-35-13.png">
+        </div>
+        <div class="card card_medium"></div>
+        <div class="card card_large">
+            <img src="http://clipart-library.com/image_gallery/320477.png">
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="card card_small"></div>
+        <div class="card card_medium"></div>
+        <div class="card card_large"></div>
+        <div class="card card_small"></div>
+        <div class="card card_medium"></div>
+        <div class="card card_large"></div>
+
+
+
+    </div>
+
+
+    <!-- <script>
+        for (let cardObject of document.getElementsByClassName("card_img")) {
+            console.log(cardObject);
+            // e.addEventListener('click', (et) => {
+            //     console.log(event.srcElement.currentSrc);
+            // });
+            // e.addEventListener('click', ClickHandler);
+            // ;
+            cardObject.addEventListener('click', ClickHandler(evnt) {
+                // ClickHandler(et);
+                // console.log(e.currentSrc);
+            });
+        }
+        // document.getElementById("test").style.display = "none";
+
+        function ClickHandler(event) {
+
+            console.log(event);
+            console.log(event.srcElement.currentSrc);
+            document.getElementById("test").style.display = "none";
+            // console.log(document.getElementById("test"));
+            // document.getElementById('test').style.display = 'none';
+            // document.getElementById("test").appendChild()
+        }
+    </script> -->
+
+
+
+    <script>
+        //11.27.2022 we now have it working so image when clicked pops up box and changes image to the clicked image
+        //next we need to get it to also take a string (associated with the image? OOP? and update the div to display that text )
+        //also make pop up have nice open and close animation (can be done by editing open/closepopup())
+        //don't have pop up follow on scroll cause that's annoying. makes sense to have it close
+
+        //11.29.2022 tried dividing main div into two divs: one for the image, and one for the text. Now trying to
+        //get it so the image resized to fit within new div, but for some reason, when I try to set the image to say
+        //50% of it's div, instead, it just makes the div twice as big to make up. How is it doing this opposite effect??
+
+        addEventListener(('scroll'), ScrollHandler);
+
+        for (let cardObject of document.getElementsByClassName("card_img")) {
+            console.log("ClickHandler Added to:");
+            console.log(cardObject);
+            cardObject.addEventListener('click', ClickHandler)
+        }
+
+
+        var myDiv = document.getElementById("test");
+        var myDiv2 = document.getElementById("test2");
+        console.log(myDiv.textContent);
+        console.log(myDiv.getElementsByTagName("img")[0].currentSrc);
+        // OpenPopUp("https://media.discordapp.net/attachments/813353720610947102/1044880238196293632/Screenshot_from_2022-11-22_22-35-13.png", 1);
+
+        function ScrollHandler() {
+            console.log("scrolled");
+            ClosePopUp();
+        }
+
+        function ClickHandler() {
+            console.log("ran");
+            OpenPopUp(this.currentSrc, 1);
+
+        }
+
+        function ClosePopUp() {
+            document.getElementById("test").style.display = "none";
+        }
+
+        function OpenPopUp(imgSrc, string) {//have it take image and text as input to change?
+            myDiv2.getElementsByTagName("img")[0].src = imgSrc;
+            myDiv2.getElementsByTagName("img")[0].style.height = "50%";
+
+            document.getElementById("test").style.display = "grid";
+        }
+    </script>
+</body>
+
+</html>
