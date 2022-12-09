@@ -1,3 +1,7 @@
 TODO:
 12-7-2022 get logo and side pics aligned together? so the logo is equadistant
 from pictures and left side of window
+
+12-8-2022 logo is now in the properly set up. Next make buttons to switch between
+tile and list mode. just have both exist already and just hide one and show the other
+ 

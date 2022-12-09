@@ -1,5 +1,8 @@
 body {
-    background: #0E1116;
+    /* background: #0E1116;
+     */
+
+    background: red;
     padding: 0;
     margin: 0;
 }
@@ -20,43 +23,7 @@ body {
     background-color: grey;
 } */
 
-.pin_container {
-    margin: auto;
-    padding: 0 0 0 30%;
-    /* margin: 0; */
-    /* padding: 5000; */
-    width: 65vw;
-    /* position: absolute; */
-    /* align-items: right;
-     */
-    justify-content: right;
-    /* left: 50%;
-    transform: translateX(-50%); */
-    display: grid;
-    grid-template-columns: repeat(auto-fill, var(--card_width));
-    grid-auto-rows: var(--row_increment);
 
-    /* justify-content: right; */
-    /* position: fixed; */
-
-    /* justify-content: center; */
-    /* border-radius: var(--card_border_radius); */
-    background-color: #0E1116;
-
-    /*make hidden text un-selectable*/
-    -webkit-user-select: none;
-    /* Safari */
-    -ms-user-select: none;
-    /* IE 10 and IE 11 */
-    user-select: none;
-    /* make it so text is small and hidden*/
-    font-size: 0;
-
-    /* position: fixed; */
-    /* right: 100px; */
-
-    /* left: 500; */
-}
 
 
 
@@ -210,17 +177,91 @@ body {
     max-height: 100%;
 }
 
-#logo {
+.logo {
     background-color: blue;
     width: 10vw;
     height: 8vw;
-    margin-left: 10vw;
+    margin: auto;
+
+    /* flex: 2; */
+    /* margin-left: 10vw; */
     background-image: url(https://lh3.googleusercontent.com/-Dto50-_FnZhVnlBahC0GfVA2iEyXVNxNalL9POR0hSrR0cPBsfedCBdUNLmBflGgcWrOkv23Z2giKKrsR4fc2iHDu4Br__yuWEUVNbMiwvDPcrVEXQOhdRWgjxn_29ggqY39I8_FLgLilAfMmvKqTOiJHr53R5UN_303t0fPlHsx5_GR6NkS_nUiydUf-bh3uQBd1SfK0aam8ROusvse0ZX-6JcVxjLKpPYmorKRhfXuANDOy9iYYd3Tvieah_lhI642KbcwzxPx43RQAIXpWh0Izdo7uakfeEE_bQTdOSihLHK5easOOzxXWsjFW4Fl_2zZ4v3jlWcozmD9hiS3xsm3tJlaDsh-50fxznR-cCzgWert-Cn68XcxxWSuRHrvMpqe_jGybkb91HjCbOJrWrIY1I929zWsyWvklRcj_M20RPVBnPq65zpzPFAWhPbWrgXm0Z-TuQdxH1Lm9xivds2Y5RBCzwi-4Y6lhY4dBtr7vfPJ3H1a0gfT9lQhDaaxzo6jUNHAljL2_BvdwsjKy-rn-HcupN3mdDDPSr8fsoVUYalkx4n0sRBo3buv-ZN5KKwGVx-c89AFqljkb6NNcQpkamfjoD4jgyO572Yz8goutG5CZ-fNM4s3PvMuy8eAhmZO7ET2i_vpABwIVL4e9Q_lsq3xLB4QDiizjCh5tDNMVAS3AeHHACD-uHC4atArrONbXMGo8pzuufjnQVHaXzplQgsVOwszhwFK2AZzLj8ZzY9cQZ12HEyV7681a-_ZKet_Pec-xvxkAvZmPwBLkiejNEf_eFJGbD1JLcaytef1c5y0Rqs_1RGxMC2Qc7gLAKlmFD7rdDpMMWYjzt0WDMX9bZWQq6EbKmySa5MBDuU-sqpG8ke9-mow_Cj_s4qZQHr26C06tix0xTVO39kgPsAe2IS8Uan33eWOkQwGZojoYZRXMDCXzcgiHyHCrXNRCzAk7Ih_mCUmLwrIfNE_Qxj4yjbod_RXbRNH-3E3lZ2XKRvzKV5YqT_DZo1_yam8N-ndmCxZyWHoM6W8GBATY9eNTElhq3jknwPFUOI9d1vViPJ0f0Tg9or_nBj_KoDrzV7gAndwhL9W1ahipzhLSamPhdXRVk=w200-h180-no?authuser=2);
     /* background-position: 0px 0px; */
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    /* float: left; */
+}
+
+.pin_container {
+
+
+    width: 75vw;
+
+    justify-content: center;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--card_width));
+    grid-auto-rows: var(--row_increment);
+
+    /* justify-content: right; */
+    /* position: fixed; */
+
+    /* justify-content: center; */
+    /* border-radius: var(--card_border_radius); */
+    background-color: #0E1116;
+
+    /*make hidden text un-selectable*/
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* make it so text is small and hidden*/
+    font-size: 0;
+
+    outline: 1px;
+    outline-style: solid;
+    outline-color: white;
+
+    /* position: fixed; */
+    /* right: 100px; */
+
+    /* left: 500; */
+
+}
+
+#test4 {
+    width: 25%;
+    background-color: aqua;
+    text-align: center;
+    outline: 1px;
+    outline-style: solid;
+    outline-color: white;
 }
 
 #everything-holder {
-    align-content: center;
+    display: flex;
+    /* display: inline-block; */
+    /* width: 24vw; */
+    /* height: 20px; */
+    /* margin-right: 0;
+    justify-content: space-evenly; */
+    /* display: inline-block; */
+    /* justify-content: space-between; */
+    background-color: purple;
+    /* float: left */
 }
+
+p {
+    word-wrap: break-word;
+
+}
+
+button {
+    /* outline: none; */
+    /* background-color: pink; */
+    border: none;
+}
+
+#btn1 {}
