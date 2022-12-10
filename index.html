@@ -25,26 +25,6 @@
         <h1>hello</h1>
     </div>
 
-
-    <!-- <div id="test"> -->
-
-    <!-- 111111111111111adsfadsfadfs -->
-    <!-- <img src="https://i.pinimg.com/564x/71/fa/81/71fa8137b64abcf50fdb124c21fd16fd.jpg"> -->
-    <!-- this is a div -->
-    <!-- <div id="test2"> -->
-
-    <!-- <img src="https://i.pinimg.com/564x/71/fa/81/71fa8137b64abcf50fdb124c21fd16fd.jpg"> -->
-
-    <!-- <h1>jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
-            </h1> -->
-
-    <!-- </div> -->
-
-    <!-- <div id="test3">
-            ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-        </div> -->
-    <!-- </div> -->
-
     <p class="paragraph-text">
         blahblahblkahslkdjf;aslkdjf;asdkljfa;dsklfja;dsflkjads;flkjadsf;lkjasdf;alkjdsfa;slkfdja;skldfja;dslkjfasdfasdfadsfasdfadsfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfadsf
     </p>
@@ -55,16 +35,19 @@
 
     <div id="pop-up">
 
+        <button onClick="ClosePopUp()">X</button>
+
         <div id="pop-up-image">
             <img id="main-image"
                 src="https://www.planetware.com/wpimages/2020/03/best-hot-air-balloon-rides-cappadocia-turkey.jpg">
         </div>
+
         <div id="pop-up-text">
             ;akljdsf;kljasdf;akljsdf;akljdfa;dskflja;dsklfja;sdkfja;sdkfja;sdkfja;dkfja;dslkjfa;lksjd;alkjsdf;akldsjfa;lksdfja;dsklfja;sdlfkja;sdlkfja;sdklfjads;lkfjads;fkljasdf;lkajdsf;alkdsjf;a
         </div>
-    </div>
 
-    <!-- <h1 class="test2">test</h1> -->
+
+    </div>
 
     <div id="everything-holder">
 
@@ -76,15 +59,9 @@
             </div>
             <p>;dfljkhlkjkadsfsssssssssssadsasdasdasd</p>
 
-            <button onClick="ListView()" id="btn1">mytest</button>
+
 
         </div>
-
-
-        <!-- <div class="logo">
-
-        </div> -->
-
 
         <div id="pin" class="pin_container">
 
@@ -122,7 +99,7 @@
             </div>
 
             <div class="card card_large">
-                <img
+                <img class="card_img"
                     src="https://media.discordapp.net/attachments/713619926711009301/1049883030573031465/PXL_20221119_004407489.jpg?width=528&height=704">
                 Sunset Bench - Pixel 6
             </div>
@@ -193,17 +170,6 @@
 
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
     <script>
         //11.27.2022 we now have it working so image when clicked pops up box and changes image to the clicked image
         //next we need to get it to also take a string (associated with the image? OOP? and update the div to display that text )
@@ -225,24 +191,14 @@
         addEventListener(('scroll'), ScrollHandler);
 
         for (let cardObject of document.getElementsByClassName("card_img")) {
-            console.log("ClickHandler Added to:");
+
             console.log(cardObject);
-            cardObject.addEventListener('click', ClickHandler)
+            cardObject.addEventListener('click', ClickHandler);
+            cardObject.addEventListener('mouseover', MouseOverHandler);
+            cardObject.addEventListener('mouseout', MouseOutHandler);
         }
 
 
-        var myDiv = document.getElementById("pop-up");
-        var myDiv2 = document.getElementById("pop-up-image");
-        var myDiv3 = document.getElementById("pop-up-text");
-
-        console.log(myDiv.textContent);
-        // console.log(myDiv.getElementsByTagName("img")[0].currentSrc);
-        // OpenPopUp("https://media.discordapp.net/attachments/813353720610947102/1044880238196293632/Screenshot_from_2022-11-22_22-35-13.png", 1);
-
-        function ScrollHandler() {
-            console.log("scrolled");
-            ClosePopUp();
-        }
 
         function ClickHandler() {
             console.log("ran");
@@ -250,11 +206,40 @@
 
         }
 
+        const hoverSize = 10;
+        function MouseOverHandler() {
+
+            this.style.opacity = "0.7";
+
+            is.parentNode.style.width = (parseInt(this.parentNode.style.width, 10) + hoverSize) + 'px';
+
+        }
+
+        function MouseOutHandler() {
+            this.style.opacity = "1.5";
+        }
+
+
+
+
+        var myDiv = document.getElementById("pop-up");
+        var myDiv2 = document.getElementById("pop-up-image");
+        var myDiv3 = document.getElementById("pop-up-text");
+
+        console.log(myDiv.textContent);
+
+        function ScrollHandler() {
+            console.log("scrolled");
+            ClosePopUp();
+        }
+
+
+
         function ClosePopUp() {
             document.getElementById("pop-up").style.display = "none";
         }
 
-        function OpenPopUp(imgSrc, string) {//have it take image and text as input to change?
+        function OpenPopUp(imgSrc, string) {
             myDiv2.getElementsByTagName("img")[0].src = imgSrc;
             myDiv2.getElementsByTagName("img")[0].style.maxHeight = "100%";
             myDiv2.getElementsByTagName("img")[0].style.Height = "100%";
@@ -266,12 +251,10 @@
 
 
 
-        function ListView() {
-            console.log("buttonclicked");
-            document.getElementById("pin").style.display = "none";
-
-            // document.getElementById("everything-holder")
-        }
+        // function ListView() {
+        //     console.log("buttonclicked");
+        //     document.getElementById("pin").style.display = "none";
+        // }
 
 
 
