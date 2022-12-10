@@ -22,7 +22,8 @@
     </p> -->
 
     <div class="container">
-        <h1>hello</h1>
+        <h1 style="position:fixed;z-index: 0"><br>Photography
+            Portfolio<br></h1>
     </div>
 
     <div id="info-bar">
@@ -35,7 +36,11 @@
             <div class="logo1">
 
             </div>
-            <p id="school-name">Foothill College<br>Photography Portfolio</p>
+
+            <div style="display: table; height: 100%;overflow: hidden;">
+                <h3 id="school-name">Foothill College<br>Fall Quarter 2022</h3>
+            </div>
+
         </div>
 
         <!-- <div class="logo1">
@@ -44,7 +49,7 @@
 
         <div id="paragraph-holder">
             <div class="paragraph-text">
-                blahblahblkahslkdjf;aslkdjf;asdkljfa;dsklfja;dsflkjads;flkjadsf;lkjasdf;alkjdsfa;slkfdja;skldfja;dslkjfasdfasdfadsfasdfadsfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfadsf
+                Click an image to enlarge <br> Click again to close<br>or press esc
             </div>
         </div>
 
@@ -74,22 +79,25 @@
 
 
 
+    <div id="screen-div">
+        <div id="pop-up">
 
-    <div id="pop-up">
 
-        <button onClick="ClosePopUp()">X</button>
+            <div id="pop-up-image">
+                <img id="main-image"
+                    src="https://www.planetware.com/wpimages/2020/03/best-hot-air-balloon-rides-cappadocia-turkey.jpg">
+            </div>
 
-        <div id="pop-up-image">
-            <img id="main-image"
-                src="https://www.planetware.com/wpimages/2020/03/best-hot-air-balloon-rides-cappadocia-turkey.jpg">
+            <div id="pop-up-text">
+                ;akljdsf;kljasdf;akljsdf;akljdfa;dskflja;dsklfja;sdkfja;sdkfja;sdkfja;dkfja;dslkjfa;lksjd;alkjsdf;akldsjfa;lksdfja;dsklfja;sdlfkja;sdlkfja;sdklfjads;lkfjads;fkljasdf;lkajdsf;alkdsjf;a
+            </div>
+
+
         </div>
-
-        <div id="pop-up-text">
-            ;akljdsf;kljasdf;akljsdf;akljdfa;dskflja;dsklfja;sdkfja;sdkfja;sdkfja;dkfja;dslkjfa;lksjd;alkjsdf;akldsjfa;lksdfja;dsklfja;sdlfkja;sdlkfja;sdklfjads;lkfjads;fkljasdf;lkajdsf;alkdsjf;a
-        </div>
-
-
     </div>
+
+
+
 
     <div id="everything-holder">
 
@@ -99,7 +107,7 @@
 
 
             </div>
-            <p id="side-bar-text">Joshua Ching
+            <p id="side-bar-text">Joshua Ching<br>~
                 <br>12.13.2022
             </p>
 
@@ -131,10 +139,11 @@
             </div>
 
             <div class="card card_small">
-                <img class="card_img"
-                    src="https://media.discordapp.net/attachments/713619926711009301/1049881875344273408/PXL_20221202_223543538.jpg?width=1196&height=897">
-                Fallen Tree - Pixel 6
+                <img style="height:100%; left:30px;position:relative" class="card_img"
+                    src="https://media.discordapp.net/attachments/713619926711009301/1049887900000600094/PXL_20221016_055146742.jpg?width=937&height=703">
+                Coding Crew - Pixel 6
             </div>
+
 
             <div class="card card_medium">
                 <img class="card_img"
@@ -149,9 +158,9 @@
             </div>
 
             <div class="card card_small">
-                <img style="height:100%; left:30px;position:relative" class="card_img"
-                    src="https://media.discordapp.net/attachments/713619926711009301/1049887900000600094/PXL_20221016_055146742.jpg?width=937&height=703">
-                Coding Crew - Pixel 6
+                <img class="card_img"
+                    src="https://media.discordapp.net/attachments/713619926711009301/1049881875344273408/PXL_20221202_223543538.jpg?width=1196&height=897">
+                Fallen Tree - Pixel 6
             </div>
 
             <div class="card card_medium">
@@ -232,7 +241,14 @@
         // next step: put in actual images and make things look pretty...?
 
 
-        addEventListener(('scroll'), ScrollHandler);
+        addEventListener(('scroll'), ClosePopUp);
+        // addEventListener(('scroll'), {ClosePopUp);
+        document.onkeydown = function (e) {
+            if (e.key === "Escape") {
+                ClosePopUp();
+            }
+        }
+
 
         for (let cardObject of document.getElementsByClassName("card_img")) {
 
@@ -255,7 +271,7 @@
 
             this.style.opacity = "0.7";
 
-            is.parentNode.style.width = (parseInt(this.parentNode.style.width, 10) + hoverSize) + 'px';
+            // is.parentNode.style.width = (parseInt(this.parentNode.style.width, 10) + hoverSize) + 'px';
 
         }
 
@@ -265,22 +281,21 @@
 
 
 
-
+        var screenDiv = document.getElementById("screen-div");
         var myDiv = document.getElementById("pop-up");
         var myDiv2 = document.getElementById("pop-up-image");
         var myDiv3 = document.getElementById("pop-up-text");
+        // myDiv.addEventListener('mouseleave', ClosePopUp);
+        screenDiv.addEventListener('click', ClosePopUp);
 
-        console.log(myDiv.textContent);
 
-        function ScrollHandler() {
-            console.log("scrolled");
-            ClosePopUp();
-        }
+
+
 
 
 
         function ClosePopUp() {
-            document.getElementById("pop-up").style.display = "none";
+            screenDiv.style.display = "none";
         }
 
         function OpenPopUp(imgSrc, string) {
@@ -290,7 +305,7 @@
 
             myDiv3.textContent = string;
 
-            document.getElementById("pop-up").style.display = "inline";
+            screenDiv.style.display = "inline";
         }
 
 

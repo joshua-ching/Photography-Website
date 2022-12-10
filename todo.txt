@@ -6,3 +6,8 @@ from pictures and left side of window
 tile and list mode. just have both exist already and just hide one and show the other
 
 12-9-2022 maybe make images not right click copy-able
+make it so it works without having acess to my accounts
+test in icognito browser. add descriptions to photos
+also consider making side bar larger? and put my "essay" on the side bar
+(I think we need to include some writing about how we felt about the class?)
+
