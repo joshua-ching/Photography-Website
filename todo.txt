@@ -15,3 +15,4 @@ also consider making side bar larger? and put my "essay" on the side bar
 
 12-10-2022 add arrows so you can just open the next card using arrow keys?
 maybe later if have more time. gotta apply for vr job asap
+top div contents break at 50% view size (ctrl -)

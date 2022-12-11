@@ -68,6 +68,8 @@ img {
 
 
     background-color: darkgray;
+
+   
 }
 
 .card_image {
@@ -82,7 +84,9 @@ img {
 .container {
     width: 100%;
     height: 500px;
-    background-position: center;
+    /* margin-top:50px; */
+    
+    background-position:  10% 30%;
     background-size: cover;
     background-image: url(https://lh3.googleusercontent.com/pw/AL9nZEXe66TXPElq9ehpN3cP1Ic31DweWVgnX_hFBhaPVkPTfOlxlKE_kqvq0ZJ521E7iGnWeZlwXoWZyJKb8b_Lc5o3taz7QJ_I_WjMJ8Gsn6u08nA7a1raXsY80Ly-Tp-fCUYfD3PyWDzMdakT_Zv25-r4vw=w1617-h1213-no);
     background-attachment: fixed;
@@ -144,6 +148,15 @@ img {
     /* background-color: #858585; */
     border-radius: 10px;
 
+}
+
+#too-tall{
+ /* margin: auto; */
+/* margin-top:-200px; */
+
+width: 100%;
+height: 130%;
+margin-top: -60px;
 }
 
 #pop-up-text {
@@ -307,6 +320,7 @@ img {
     min-width: 10%;
     font-size: 1.7vw;
 
+
 }
 
 /* .br {
@@ -374,7 +388,7 @@ img {
 
     background: var(--main_background_color);
 
-    text-align: center;
+    /* text-align: left; */
     outline: 1px;
     outline-style: solid;
     outline-color: white;
@@ -390,6 +404,7 @@ img {
     padding: 10px 10px 0px 10px;
     margin: 0;
     font-size: 2vw;
+    text-align: center;
 }
 
 #side-bar-essay {
@@ -400,6 +415,10 @@ img {
     padding: 0px 20px;
     /* font-size: 1.5vw; */
     font-size: min(1.5vw, 30px);
+}
+#side-bar-essay::first-letter {
+    font-size: 50px;
+    margin-right: -7px;
 }
 
 button {
