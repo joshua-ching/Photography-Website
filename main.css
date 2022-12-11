@@ -1,8 +1,32 @@
+/*
+Because I don't want to comment everything, I'll just put a summary of things
+I learned in regards to CSS here:
+
+margin is the space outside of the element
+padding is the space inside the element
+
+float:left is useful when objects are stacking when you want them to be side by side
+
+Width:100% is better for backgrounds since width:100vw leads to going out of bounds
+if there is a verticle scroll bar
+
+Height:100% doesn't work on an element without a parent because it could be infinitely
+tall
+
+when trying to center, try using margin:auto + display:flex on parent object
+or try align-items:center or text-align:center 
+
+for complicated centering, it's better to use multiple divs + flex/flexbox?
+
+I still have a ton of things I don't understand about css but again, for just 1 week
+of working time, not bad. I would recommend to properly study stuff now.
+
+Like learning more deeply about flex,flexbox,grid,tables etc
+12.10.2022 Joshua Ching
+*/
+
 body {
     background: var(--main_background_color);
-
-
-    /* background: red; */
     padding: 0;
     margin: 0;
 }
@@ -13,7 +37,6 @@ img {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-
     /*make hidden text un-selectable*/
     -webkit-user-select: none;
     /* Safari */
@@ -21,8 +44,6 @@ img {
     /* IE 10 and IE 11 */
     user-select: none;
     /* make it so text is small and hidden*/
-
-
 }
 
 :root {
@@ -34,9 +55,6 @@ img {
     --card_large: 45;
     --main_background_color: #0E1116;
 }
-
-
-
 
 .card_small {
     grid-row-end: span var(--card_small);
@@ -50,8 +68,6 @@ img {
     justify-content: center;
 }
 
-
-
 .card_large {
     grid-row-end: span var(--card_large);
     display: flex;
@@ -62,31 +78,21 @@ img {
     padding: 0px;
     margin: 12px 10px;
     border-radius: 10px;
-
-
     overflow: hidden;
-
-
     background-color: darkgray;
-
-   
 }
 
 .card_image {
-
     width: 50%;
     margin: auto;
     display: block;
-
-
 }
 
-.container {
+.heading-image {
     width: 100%;
     height: 500px;
-    /* margin-top:50px; */
-    
-    background-position:  10% 30%;
+
+    background-position: 10% 30%;
     background-size: cover;
     background-image: url(https://lh3.googleusercontent.com/pw/AL9nZEXe66TXPElq9ehpN3cP1Ic31DweWVgnX_hFBhaPVkPTfOlxlKE_kqvq0ZJ521E7iGnWeZlwXoWZyJKb8b_Lc5o3taz7QJ_I_WjMJ8Gsn6u08nA7a1raXsY80Ly-Tp-fCUYfD3PyWDzMdakT_Zv25-r4vw=w1617-h1213-no);
     background-attachment: fixed;
@@ -95,7 +101,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* z-index: 5; */
 
     /*make hidden text un-selectable*/
     -webkit-user-select: none;
@@ -106,8 +111,6 @@ img {
     /* make it so text is small and hidden*/
 }
 
-
-
 #too-small {
     width: 100%;
 }
@@ -115,12 +118,10 @@ img {
 #screen-div {
     height: 100vh;
     width: 100vw;
-    /* background-color: blue; */
     top: 0;
     position: fixed;
     display: none;
     z-index: 50;
-    /* position: relative; */
 }
 
 #pop-up {
@@ -144,19 +145,15 @@ img {
 
     z-index: 2;
     background-color: rgb(69, 69, 69);
-    /* background-color: #847979; */
-    /* background-color: #858585; */
+
     border-radius: 10px;
 
 }
 
-#too-tall{
- /* margin: auto; */
-/* margin-top:-200px; */
-
-width: 100%;
-height: 130%;
-margin-top: -60px;
+#too-tall {
+    width: 100%;
+    height: 130%;
+    margin-top: -60px;
 }
 
 #pop-up-text {
@@ -198,34 +195,19 @@ margin-top: -60px;
     max-height: 100%;
 }
 
-
-
-
-
 #info-bar {
-    /* display: inline-block; */
-    /* display: flex; */
-    /* justify-content: space-around; */
+
     margin-top: 0px;
-    /* margin: 0 39px; */
+
     height: 175px;
     width: 100%;
-    /* color: pink; */
+
     background-color: red;
     z-index: 2;
     /* background: var(--main_background_color); */
 }
 
-/* #test {
-    margin: auto;
-    background-color: green;
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    height: 100%;
-} */
-
-#test2 {
+#info-bar-left {
     /* background-color: green; */
     background: var(--main_background_color);
     height: 100%;
@@ -234,17 +216,15 @@ margin-top: -60px;
     padding: auto;
     z-index: 1;
     position: relative;
-    /* margin-left: 10%; */
-
 
 }
 
-.logo1 {
+.school-logo {
     /* background-color: purple; */
     background: var(--main_background_color);
     width: 150px;
     height: 120px;
-    /* margin: auto; */
+
 
     background-image: url(https://lh3.googleusercontent.com/pw/AL9nZEUTsK_mlbtsXckL2HGvG3hEz5gMHDtBkuGaQd3HvxEsLNGYdCO2A9nFHgENhVfkJ8Xv5q_uixxTco7PFPcMZrR_BaQLHF2G653X8tb2mt1joHuZasKWpg1in_ae65p9LL21r1PRl-dHI3HEwZtITCnGiA=w200-h180-no);
     background-size: 100% 100%;
@@ -253,13 +233,6 @@ margin-top: -60px;
     float: left;
     margin-top: 25px;
 
-
-    /* margin-top: auto; */
-    /* margin-bottom: auto; */
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* float: left; */
-
 }
 
 #school-name {
@@ -267,22 +240,7 @@ margin-top: -60px;
 
     display: table-cell;
     vertical-align: middle;
-
-
-
-    /* margin-top: auto; */
-    /* margin-bottom: auto; */
-
-
-    /* margin: -10px 20px; */
-    /* text-align: center; */
-    /* line-height: 2vw; */
     font-size: 2vw;
-
-    /* bottom: 0%; */
-
-    /* color: blue; */
-    /* text-align: center; */
 }
 
 #paragraph-holder {
@@ -293,44 +251,33 @@ margin-top: -60px;
     float: right;
 
     display: flex;
-    /* justify-content: center; */
+
     align-items: center;
 
     z-index: 1;
     position: relative;
-
-    /* width: 100px;
-    height: 100px; */
 }
 
 .paragraph-text {
-    /* margin-top: 0px; */
+
 
     text-align: center;
     color: white;
     word-wrap: break-word;
 
-    /* margin: auto; */
-    padding: 30px;
-    /* margin-top: auto; */
-    margin-bottom: 0px;
 
-    /* margin: 20px 30px; */
-    /* margin: auto; */
+    padding: 30px;
+
+    margin-bottom: 0px;
     min-width: 10%;
     font-size: 1.7vw;
 
 
 }
 
-/* .br {
-    display: block;
-    margin: 50px 0;
-} */
 
 
-
-.logo2 {
+.profile-picture {
     /* background-color: blue; */
     /* background: var(--main_background_color); */
     width: 13vw;
@@ -387,8 +334,6 @@ margin-top: -60px;
     /* background-color: #BFD7FF; */
 
     background: var(--main_background_color);
-
-    /* text-align: left; */
     outline: 1px;
     outline-style: solid;
     outline-color: white;
@@ -410,12 +355,13 @@ margin-top: -60px;
 #side-bar-essay {
     word-wrap: break-word;
     color: white;
-    /* margin-top: -20px; */
+
 
     padding: 0px 20px;
-    /* font-size: 1.5vw; */
+
     font-size: min(1.5vw, 30px);
 }
+
 #side-bar-essay::first-letter {
     font-size: 50px;
     margin-right: -7px;

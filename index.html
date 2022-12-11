@@ -5,9 +5,29 @@
 <head>
     <title>Josh's Website</title>
     <link href="main.css" rel="stylesheet" type="text/css" />
+    <!--
+        Like with the CSS I tried to put the JavaScript into its own file
+        but it creates a bunch of reference errors. Like the script connects
+        but it doesn't understand the old references... Maybe something to learn
+        another time.
+    -->
 </head>
 
+<!--
+    this line below makes it so right clicking does not work on the page
+    I didn't want people to be able to save the images shown in my portfolio easily
+-->
 <body oncontextmenu="return false;">
+
+
+    <!--
+        below is what the website looked like when I first started.
+        This was the first website I ever made and knew nothing
+        about web dev before this project.
+
+        not bad for my first ever website.
+    -->
+
     <!-- <h1>Here is a big title test2</h1>
     This is a <em>test</em>
 
@@ -21,20 +41,15 @@
         <img src="https://i.pinimg.com/564x/71/fa/81/71fa8137b64abcf50fdb124c21fd16fd.jpg">
     </p> -->
 
-    <div class="container">
+    <div class="heading-image">
         <h1 style="position:fixed;z-index: 0"><br>Photography
             Portfolio<br></h1>
     </div>
 
 
     <div id="info-bar">
-
-
-
-
-
-        <div id="test2">
-            <div class="logo1">
+        <div id="info-bar-left">
+            <div class="school-logo">
 
             </div>
 
@@ -44,46 +59,17 @@
 
         </div>
 
-        <!-- <div class="logo1">
-            </div> -->
-
-
         <div id="paragraph-holder">
             <div class="paragraph-text">
                 Click an image to enlarge <br> Click again to close<br>or press esc
             </div>
         </div>
-
-        <!-- <div id="test">
-
-            <div id="test2">
-                <div class="logo1">
-
-                </div> -->
-        <!-- <p id="school-name">Foothill College<br>Photography Portfolio</p> -->
-        <!-- </div> -->
-
-        <!-- <div class="logo1">
-            </div> -->
-
-        <!-- 
-            <p class="paragraph-text">
-                blahblahblkahslkdjf;aslkdjf;asdkljfa;dsklfja;dsflkjads;flkjadsf;lkjasdf;alkjdsfa;slkfdja;skldfja;dslkjfasdfasdfadsfasdfadsfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfadsf
-            </p>
-        </div> -->
-
     </div>
-
-
-
-
-
-
-
+    <!--
+        This is the declaration of the pop up that shows up when you click on an image
+    -->
     <div id="screen-div">
         <div id="pop-up">
-
-
             <div id="pop-up-image">
                 <img id="main-image"
                     src="https://www.planetware.com/wpimages/2020/03/best-hot-air-balloon-rides-cappadocia-turkey.jpg">
@@ -99,15 +85,22 @@
 
 
 
+    <!--
+        everything-holder holds all the info below the info bar(section talking about school)
+        it has two seperate items. One is the left hand side which contains my essay.
+        the other is the pin_container on the right side
 
+        the pin_container the first thing I made and was from a tutorial. Not knowing what
+        I was coding came back to bite me. but because I needed to change some properties
+        about it, I think I learned a lot about css
+    -->
     <div id="everything-holder">
 
         <div id="side-div">
-            <div class="logo2">
 
-
-
+            <div class="profile-picture">
             </div>
+
             <p id="side-bar-credits">Joshua Ching<br>-
 
             <div style="white-space: pre-wrap;"id="side-bar-essay">Working in Photography 04 has been an absolute pleasure. This quarter I’ve come to learn more advanced photography concepts while also getting to further explore my creativity.
@@ -121,28 +114,11 @@ One photo I’m particularly proud of in this regard is “Temple.” I think th
 Moreover, in this course I’ve cultivated a deeper appreciation of the incredibly important role lighting plays in photography. I remember learning that the Greek roots of photography mean “drawing with light.” But I never realized just how true that was until starting work on my own photography projects. By making use of a very long shutter speed and low ISO I could literally draw in the air using light. I never thought I’d be able to draw in 3D as if in Virtual Reality, but thanks to the skills I’ve learned this quarter I can now remove the “Virtual” from that equation.
 
 This quarter I’ve learned and experienced so much more than I thought I would. And I feel incredibly lucky to have had the chance to work with Professor Jordahl who has been nothing but exceptional both in teaching and kindness. From the knowledge and experiences I’ve accumulated in this class, I no longer see the world a layman, but as a photographer. 
-
-
             </div>
             </p>
-
-
-
-
-
-
         </div>
 
         <div id="pin" class="pin_container">
-
-
-            <!-- <div class="card card_small">
-
-                <img class="card_img"
-                    src="https://lh3.googleusercontent.com/pw/AL9nZEUaE_SugcoshHVune6-LKx4OiSJk9fISJqdNl76Z9T5bdb_Oc1qXyr7LapJTOe1oi-g0p5IjxHklCJ91MDkD0p_vYL9k2N8LOQDPVfhuFKU79iEhq5wko8gwRyFu_imI3eDvusVomUF1QLvhsLpakZQEA=w1617-h1213-no">
-                Beach Log - Pixel 6
-
-            </div> -->
 
             <div class="card card_small">Beach Log - Pixel 6<br>
                 This photo was taken at Pillar Point and the technique of framing was used utilizing the mountain and interestingly shaped log
@@ -221,12 +197,6 @@ This quarter I’ve learned and experienced so much more than I thought I would.
                 
             </div>
 
-            <!-- <div class="card card_medium">
-                <img class="card_img"
-                    src="https://media.discordapp.net/attachments/713619926711009301/1049887282540318810/PXL_20221028_223149417.jpg?width=528&height=704">
-                The Squatter - Pixel 6
-            </div> -->
-
             <div class="card card_medium">Sunset Clouds - Pixel 6
                 This was taken from my window at sunset. By taking advantage of natural lighting and the rule of thirds this came out to be a great photo
                 
@@ -275,12 +245,6 @@ This quarter I’ve learned and experienced so much more than I thought I would.
         
             </div>
 
-            <!-- <div class="card card_small">
-                <img class="card_img" id="too-short"
-                    src="https://media.discordapp.net/attachments/713619926711009301/1049886879539019786/PXL_20221118_010227233.jpg?width=937&height=703">
-                Sunset Clouds - Pixel 6
-            </div> -->
-
             <div class="card card_small">Night Ocean - Pixel 6
                 This photo was taken at dusk of the Pillar Point Harbor. This photo is a combines night photography, symmetry and silhouette lighting
                 
@@ -314,85 +278,61 @@ This quarter I’ve learned and experienced so much more than I thought I would.
 
 
         addEventListener(('scroll'), ClosePopUp);
-        // addEventListener(('scroll'), {ClosePopUp);
+
+        //man it is weird that you need to give each element a unique name
+        //in order to reference them in script
+        var screenDiv = document.getElementById("screen-div");
+        var popUpDiv = document.getElementById("pop-up");
+        var popUpImageDiv = document.getElementById("pop-up-image");
+        var popUpTextDiv = document.getElementById("pop-up-text");
+        screenDiv.addEventListener('click', ClosePopUp);
+
         document.onkeydown = function (e) {
             if (e.key === "Escape") {
                 ClosePopUp();
             }
         }
 
-
         for (let cardObject of document.getElementsByClassName("card_img")) {
-
             console.log(cardObject);
             cardObject.addEventListener('click', ClickHandler);
             cardObject.addEventListener('mouseover', MouseOverHandler);
             cardObject.addEventListener('mouseout', MouseOutHandler);
         }
 
-
-
         function ClickHandler() {
             console.log("ran");
-            OpenPopUp(this.currentSrc, this.parentNode.textContent); //change hu to get textcontent
-
+            OpenPopUp(this.currentSrc, this.parentNode.textContent); 
         }
 
         const hoverSize = 10;
         function MouseOverHandler() {
 
             this.style.opacity = "0.7";
-
-            // is.parentNode.style.width = (parseInt(this.parentNode.style.width, 10) + hoverSize) + 'px';
-
         }
 
         function MouseOutHandler() {
             this.style.opacity = "1.5";
         }
 
-
-
-        var screenDiv = document.getElementById("screen-div");
-        var myDiv = document.getElementById("pop-up");
-        var myDiv2 = document.getElementById("pop-up-image");
-        var myDiv3 = document.getElementById("pop-up-text");
-        // myDiv.addEventListener('mouseleave', ClosePopUp);
-        screenDiv.addEventListener('click', ClosePopUp);
-
-
-
-
-
-
-
         function ClosePopUp() {
             screenDiv.style.display = "none";
         }
 
         function OpenPopUp(imgSrc, string) {
-            myDiv2.getElementsByTagName("img")[0].src = imgSrc;
-            myDiv2.getElementsByTagName("img")[0].style.maxHeight = "100%";
-            myDiv2.getElementsByTagName("img")[0].style.Height = "100%";
+            popUpImageDiv.getElementsByTagName("img")[0].src = imgSrc;
+            popUpImageDiv.getElementsByTagName("img")[0].style.maxHeight = "100%";
+            popUpImageDiv.getElementsByTagName("img")[0].style.Height = "100%";
 
-            myDiv3.innerText = string;
+            popUpTextDiv.innerText = string;
 
             screenDiv.style.display = "inline";
         }
-
-        $("body").on("contextmenu", function (e) {
-            return false;
-        });
-
-        // function ListView() {
-        //     console.log("buttonclicked");
-        //     document.getElementById("pin").style.display = "none";
-        // }
-
-
-
 
     </script>
 </body>
 
 </html>
+<!--
+    12.10.2022 Joshua Ching
+-->
